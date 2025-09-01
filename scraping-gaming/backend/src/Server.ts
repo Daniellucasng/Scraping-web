@@ -6,11 +6,13 @@ import express, { Request, Response } from 'express';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost', 'http://localhost:80'],
+  origin: ['http://localhost:5173', 'http://localhost', 'http://localhost:80','https://scrapingweb.vercel.app','scrapingweb.vercel.app'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+//scrapingweb.vercel.app
 // Headers adicionales
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -225,8 +227,9 @@ app.get("/ssd", (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+const PORT: number = parseInt(process.env.PORT || "3001", 10);
+
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
 // Añade esto al final de server.ts, antes del app.listen
