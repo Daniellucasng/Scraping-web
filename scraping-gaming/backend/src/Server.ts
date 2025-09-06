@@ -17,20 +17,37 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = mysql.createConnection({
-   host: process.env.DB_HOST || "bubowvxkj0hflntsfybz-mysql.services.clever-cloud.com",
-  user: process.env.DB_USER || "u6krmwhvslwzzrrp",
-  password: process.env.DB_PASSWORD || "IiI5rgt3KE6j1dIPcCAO",
-  database: process.env.DB_NAME || "bubowvxkj0hflntsfybz",
-}); 
-//conect DB
-db.connect(err => {
-  if (err) {
-    console.error("Error conectando a la base de datos:", err);
-    return;
-  }
-  console.log("Conectado a MySQL");
-});
+let db: mysql.Connection;
+
+function handleDisconnect() {
+  db = mysql.createConnection({
+    host: process.env.DB_HOST || "bubowvxkj0hflntsfybz-mysql.services.clever-cloud.com",
+    user: process.env.DB_USER || "u6krmwhvslwzzrrp",
+    password: process.env.DB_PASSWORD || "IiI5rgt3KE6j1dIPcCAO",
+    database: process.env.DB_NAME || "bubowvxkj0hflntsfybz",
+  });
+
+  db.connect(err => {
+    if (err) {
+      console.error("Error al conectar a MySQL:", err);
+      setTimeout(handleDisconnect, 2000); // Reintenta en 2 segundos
+    } else {
+      console.log("Conectado a MySQL");
+    }
+  });
+
+  db.on("error", err => {
+    console.error("Error en la conexión MySQL:", err);
+    if (err.code === "PROTOCOL_CONNECTION_LOST") {
+      console.warn("Conexión perdida. Reconectando...");
+      handleDisconnect();
+    } else {
+      throw err;
+    }
+  });
+}
+
+handleDisconnect();
 
 //ping de monitoreo
 app.get("/ping", (req, res) => {
