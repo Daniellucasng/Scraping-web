@@ -23,7 +23,7 @@ const db = mysql.createConnection({
   password: process.env.DB_PASSWORD || "IiI5rgt3KE6j1dIPcCAO",
   database: process.env.DB_NAME || "bubowvxkj0hflntsfybz",
 }); 
-
+//conect DB
 db.connect(err => {
   if (err) {
     console.error("Error conectando a la base de datos:", err);
@@ -32,6 +32,13 @@ db.connect(err => {
   console.log("Conectado a MySQL");
 });
 
+//ping de monitoreo
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
+
+//endpoints
 app.get("/mouse", (req, res) => {
   db.query(
     "SELECT id_mouse AS id, name_mouse AS nombre, price_mouse AS precio, tienda FROM mouse",
@@ -177,6 +184,7 @@ app.get("/motherboard", (req, res) => {
     }
   );
 });
+
 app.get("/mousepad", (req, res) => {
   db.query(
     "SELECT id_mousepad AS id, name_mousepad AS nombre, price_mousepad AS precio, tienda FROM mousepad",
