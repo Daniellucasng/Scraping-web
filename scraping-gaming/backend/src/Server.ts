@@ -6,7 +6,7 @@ import express, { Request, Response } from 'express';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost', 'http://localhost:80','https://scraping-web-fsiq.vercel.app'],
+  origin: ['http://localhost:5173', 'http://localhost', 'http://localhost:80','https://scraping-web-five.vercel.app'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
