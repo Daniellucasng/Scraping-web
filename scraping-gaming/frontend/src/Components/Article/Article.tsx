@@ -35,53 +35,53 @@ export const Article = () => {
       <h3>Algunos Productos que puedes Buscar</h3>
       <Slider {...settings}>
         <div className="product-card">
+          <Link to="/mouse">
           <img
             src="https://playtech.co.nz/cdn/shop/files/105422-2.png?v=1720743422&width=1024"
             alt="Mouse Gamer"
           />
           <h3>MOUSE</h3>
-          <Link to="/mouse">
-          <button>Buscar</button>
+          <button className="btn btn-primary btn-buscar">Buscar</button>
           </Link>
         </div>
         <div className="product-card">
+          <Link to="/laptops">
           <img
             src="https://dlcdnwebimgs.asus.com/gain/CFE9CB59-216D-4AC9-AEAE-10054506055C/h300/w300"
             alt="Laptop Gamer"
           />
           <h3>LAPTOPS</h3>
-          <Link to="/laptops">
-          <button>Buscar</button>
+          <button className="btn btn-primary btn-buscar">Buscar</button>
           </Link>
         </div>
         <div className="product-card">
+          <Link to="/procesadores">
           <img
             src="https://acdn.mitiendanube.com/stores/854/212/products/556731-74fbeefa37433fa0fc16340734083951-480-0.png"
             alt="Procesadores"
           />
           <h3>PROCESADORES</h3>
-          <Link to="/procesadores">
-          <button>Buscar</button>
+          <button className="btn btn-primary btn-buscar">Buscar</button>
           </Link>
         </div>
         <div className="product-card">
+          <Link to="audifonos">
           <img
             src="https://www.invidcomputers.com/images/000000000041182927721411829.png"
             alt="Audífonos"
           />
           <h3>AUDÍFONOS</h3>
-          <Link to="audifonos">
-          <button>Buscar</button>
+          <button className="btn btn-primary btn-buscar">Buscar</button>
           </Link>
         </div>
         <div className="product-card">
+          <Link to="monitores">
           <img
             src="https://i.ebayimg.com/images/g/KJ4AAOSw46Vj3Ljc/s-l400.png"
             alt="Monitores"
           />
           <h3>MONITORES</h3>
-          <Link to="monitores">
-          <button>Buscar</button>
+          <button className="btn btn-primary btn-buscar">Buscar</button>
           </Link>
         </div>
       </Slider>

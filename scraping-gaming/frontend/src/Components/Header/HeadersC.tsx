@@ -9,7 +9,7 @@ export const HeadersC = () => {
             <li><Link className="dropdown-item" to="/motherboards">Motherboards</Link></li>
             <li><Link className="dropdown-item" to="/cardg">Tarjetas Graficas</Link></li>
             <li><Link className="dropdown-item" to="/fuentesP">Fuentes de poder</Link></li>
-            <li><Link className="dropdown-item" to="/ssd">Unidad de estado solido SSD</Link></li>
+            <li><Link className="dropdown-item" to="/ssd">SSD</Link></li>
             <li><Link className="dropdown-item" to="/ram">Memorias RAM</Link></li>
         </ul>
     </>
