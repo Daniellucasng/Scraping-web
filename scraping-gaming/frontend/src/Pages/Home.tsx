@@ -14,9 +14,11 @@ export const Home = () => {
     <Header/>
     {/* Search */}
     <Search/>
+    <br />
     {/* Article */}
     <Article/>
     <br/>
+    <br />
     {/*Footer */}
     
     {/* routes <Footer/>*/}

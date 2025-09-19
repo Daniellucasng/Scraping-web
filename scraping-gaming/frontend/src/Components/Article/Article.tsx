@@ -32,7 +32,7 @@ export const Article = () => {
 
   return (
     <article>
-      <h3>Algunos Productos que puedes Buscar</h3>
+      <h3>Algunos productos que puedes buscar</h3>
       <Slider {...settings}>
         <div className="product-card">
           <Link to="/mouse">

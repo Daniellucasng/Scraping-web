@@ -21,7 +21,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="copyright">
-                © 2025 @QuickSolutions_gt. All rights reserved.
+                © 2025 QuickSolutions_gt. All rights reserved.
             </div>
         </div>
     </footer>
