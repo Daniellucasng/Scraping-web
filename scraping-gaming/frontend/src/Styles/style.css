@@ -375,7 +375,7 @@ footer a {
   }
   .product-card {
     width: 100%; /* Ajusta las tarjetas al 100% del contenedor */
-    height: 18vh; /* Establece una altura fija para todas las tarjetas */
+    height: 20vh; /* Establece una altura fija para todas las tarjetas */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
